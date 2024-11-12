@@ -1,0 +1,26 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.questions_container,
+.question {
+  width: 900px;
+  height: 600px;
+  border: 1px solid black;
+}
+
+.questions_container {
+  width: 900px;
+  height: 600px;
+  border: 1px solid black;
+}
+
+.question {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+}
