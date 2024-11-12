@@ -7,13 +7,14 @@
     <title>The flower in you</title>
     <link rel="stylesheet" href="base.css" />
     <link rel="stylesheet" href="questions.css" />
+    <script src="questions.js" defer></script>
   </head>
 
   <body>
     <header></header>
 
     <main>
-      <form class="questions_container">
+      <form id="quiz-form" class="questions_container">
         <!-- Question 1: How do you usually express your feelings? -->
         <div class="question">
           <h3 class="question_text">
@@ -323,8 +324,21 @@
               <label for="personality_F">Optimistic</label>
             </div>
           </div>
+          <button type="submit">Enviar</button>
         </div>
       </form>
+
+      <div id="loading" style="display: none">
+        <p>Cargando...</p>
+      </div>
+
+      <div id="result" style="display: none">
+        <img
+          id="flower-image"
+          src="./pictures/cherry_blossom.png"
+          alt="Resultado Flor"
+        />
+      </div>
     </main>
 
     <footer></footer>
