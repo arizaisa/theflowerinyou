@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="base.css" />
     <link rel="stylesheet" href="questions.css" />
     <script src="questions.js" defer></script>
+    <script src="slider.js" defer></script>
   </head>
 
   <body>
@@ -16,6 +17,7 @@
     <main>
       <form id="quiz-form" class="questions_container">
         <!-- Question 1: How do you usually express your feelings? -->
+
         <div class="question">
           <h3 class="question_text">
             How do you usually express your feelings?
@@ -331,6 +333,9 @@
       <div id="loading" style="display: none">
         <p>Cargando...</p>
       </div>
+
+      <button id="back-button">back</button>
+      <button id="next-button">next</button>
 
       <div id="result" style="display: none">
         <img

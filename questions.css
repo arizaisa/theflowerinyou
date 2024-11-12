@@ -3,6 +3,7 @@ main {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  flex-direction: column;
 }
 
 .questions_container,
@@ -13,9 +14,9 @@ main {
 }
 
 .questions_container {
-  width: 900px;
-  height: 600px;
   border: 1px solid black;
+  display: flex;
+  overflow: hidden;
 }
 
 .question {
@@ -27,6 +28,8 @@ main {
   background-color: #fff9e382;
   border-radius: 50px;
   border: none;
+  flex: 0 0 auto;
+  transition: all 500ms;
 }
 
 .input-container {
