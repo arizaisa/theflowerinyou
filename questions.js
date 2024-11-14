@@ -134,6 +134,7 @@ function getWinnerFlower(points) {
   return winnerFlower;
 }
 
+const buttons = document.getElementById("buttons");
 console.log(form);
 form.addEventListener("submit", function (event) {
   console.log("SUBMIT");
@@ -142,6 +143,7 @@ form.addEventListener("submit", function (event) {
   // Ocultar el formulario y mostrar el área de carga
   form.style.display = "none";
   loading.style.display = "block";
+  buttons.style.display = "none";
 
   setTimeout(() => {
     const points = getFlowerPoints();

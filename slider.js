@@ -19,6 +19,51 @@ function updateSliderPosition() {
   // Habilitar/Deshabilitar botones
   backButton.disabled = currentQuestionIndex === 0;
   nextButton.disabled = currentQuestionIndex === questions.length - 1;
+  setBackgroundColor(currentQuestionIndex);
+}
+
+const main = document.getElementById("main");
+// Select the SVG element or the specific path inside it
+const path = document.querySelector("#back-art .cls-1");
+const flowers = document.querySelectorAll("#flower-art .cls-2");
+
+// Change the fill color to your desired color (e.g., '#00ff00' for green)
+
+function setBackgroundColor(num) {
+  const colors = [
+    "#FF9665",
+    "#FF65A8",
+    "#AD73FF",
+    "#81B1FF",
+    "#DDFF86",
+    "#FFD769",
+    "#FF9665",
+    "#FFD769",
+  ];
+  const backArtColors = [
+    "#FFD769",
+    "#FF9665",
+    "#FF65A8",
+    "#AD73FF",
+    "#81B1FF",
+    "#DDFF86",
+    "#FFD769",
+    "#FF9665",
+  ];
+  const flowerArtColors = [
+    "#FF9665",
+    "#FF65A8",
+    "#AD73FF",
+    "#81B1FF",
+    "#DDFF86",
+    "#FFD769",
+    "#FF9665",
+    "#FFD769",
+  ];
+  console.log(colors[num]);
+  main.style.backgroundColor = colors[num];
+  path.setAttribute("fill", backArtColors[num]);
+  flowers.forEach((e) => e.setAttribute("fill", flowerArtColors[num]));
 }
 
 // Función para navegar entre las preguntas

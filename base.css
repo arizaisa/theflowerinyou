@@ -4,6 +4,16 @@
   margin: 0px;
 }
 
+@font-face {
+  font-family: artsy;
+  src: url("./fonts/Artsy\ Morning.otf");
+}
+
+@font-face {
+  font-family: Tabular-Regular;
+  src: url("./fonts/Tabular-Regular.eot");
+}
+
 img {
   object-fit: cover;
   width: 100%;
@@ -20,6 +30,10 @@ section {
 .background_image {
   position: absolute;
   z-index: 1;
+}
+
+a {
+  text-decoration: none;
 }
 
 .background {
@@ -52,9 +66,15 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   font-size: 60px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+p {
+  font-family: Tabular-Regular;
+  color: #47301f;
 }
