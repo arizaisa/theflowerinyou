@@ -134,23 +134,25 @@ function getWinnerFlower(points) {
   return winnerFlower;
 }
 
-const buttons = document.getElementById("buttons");
-console.log(form);
 form.addEventListener("submit", function (event) {
   console.log("SUBMIT");
   event.preventDefault();
 
-  // Ocultar el formulario y mostrar el área de carga
+  // Ocultar el formulario, fondo, y los SVG
   form.style.display = "none";
   loading.style.display = "block";
   buttons.style.display = "none";
+
+  // Ocultar los elementos de fondo y SVG
+  document.getElementById("back-art").style.display = "none"; // Ocultar el fondo
+  document.getElementById("flower-art").style.display = "none"; // Ocultar el SVG
+  document.getElementById("main").style.backgroundColor = "#fff9e3";
 
   setTimeout(() => {
     const points = getFlowerPoints();
     const winnerFlower = getWinnerFlower(points);
 
     // Mostrar el resultado
-
     flowerImage.src = `./pictures/${winnerFlower
       .toLowerCase()
       .replace(/ /g, "_")}.png`; // Asumimos imágenes en minúsculas con guiones bajos

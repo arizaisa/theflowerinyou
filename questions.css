@@ -5,12 +5,16 @@ main {
   min-height: 100vh;
   flex-direction: column;
   transition: all 200ms;
+  background-color: #fff9e3;
+  transition: all 500ms;
 }
 
 #back-art {
   position: absolute;
   height: 100%;
   right: 150px;
+  left: 0px;
+  bottom: 0px;
   object-fit: contain;
   display: flex;
   justify-content: start;
@@ -53,8 +57,8 @@ main {
 
 .input-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Creates two equal columns */
-  gap: 1rem; /* Space between items */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
   align-items: center;
   justify-content: center;
   padding: 20px;
@@ -62,8 +66,8 @@ main {
 }
 
 .input-container-5 {
-  grid-template-columns: repeat(3, 1fr); /* Creates two equal columns */
-  gap: 1rem; /* Space between items */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
 
 .range-labels {
@@ -80,6 +84,59 @@ h3 {
 label {
   font-family: Tabular-Regular;
   color: #47301f;
+}
+
+input[type="radio"] {
+  appearance: none;
+  margin: 0;
+  font: Tabular-Regular;
+  background-color: #fff9e3;
+  color: #47301f;
+  width: 20px;
+  height: 20px;
+  border: 2px dotted #47301f;
+  border-radius: 10px;
+}
+
+input[type="radio"]:checked {
+  background-color: #ff65a8;
+  border: 2px dotted #ff65a8;
+}
+
+input[type="range"] {
+  width: 100%;
+  appearance: none;
+  height: 2px;
+  background-color: #ddff86;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #ddff86;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  margin: 0;
+  font: Tabular-Regular;
+  color: #47301f;
+  width: 20px;
+  height: 20px;
+  border: 2px dotted #47301f;
+  border-radius: 5px;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #ff65a8;
+  border: 2px dotted #ff65a8;
 }
 
 #submit {
@@ -114,29 +171,7 @@ label {
   margin-top: 20px;
 }
 
-#back-button {
-  border-radius: 50px;
-  background-color: #fff9e3;
-  color: #47301f;
-  border: 1px;
-  width: 100px;
-  height: 50px;
-  font-size: 18px;
-  font-family: artsy;
-  cursor: pointer;
-}
-
-#back-button:hover {
-  border-radius: 50px;
-  background-color: #fff9e3;
-  color: #ff65a8;
-  border: 1px;
-  width: 100px;
-  height: 50px;
-  font-size: 18px;
-  font-family: artsy;
-}
-
+#back-button,
 #next-button {
   border-radius: 50px;
   background-color: #fff9e3;
@@ -149,13 +184,106 @@ label {
   cursor: pointer;
 }
 
+#back-button:hover,
 #next-button:hover {
   border-radius: 50px;
   background-color: #fff9e3;
-  color: #81b1ff;
+  color: #ff65a8;
   border: 1px;
   width: 100px;
   height: 50px;
   font-size: 18px;
   font-family: artsy;
+}
+
+#loading {
+  background-color: #fff9e3;
+}
+
+#result {
+  background-color: #fff9e3;
+}
+
+/* For small screens, mobile and tablet */
+@media (max-width: 1380px) {
+  #flower-art {
+    position: fixed;
+    z-index: 1;
+    height: 40%;
+    left: 20px;
+    bottom: 10px;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 768px) {
+  .questions_container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    overflow: hidden;
+  }
+
+  .question {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .input-container {
+    grid-template-columns: 1fr;
+    font-size: 16px;
+  }
+
+  #back-art {
+    position: absolute;
+    height: 100%;
+    right: 150px;
+    left: 0px;
+    bottom: 0px;
+    object-fit: contain;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+  }
+
+  #flower-art {
+    position: fixed;
+    z-index: 1;
+    height: 32%;
+    left: 5px;
+    bottom: 10px;
+    object-fit: contain;
+  }
+
+  #submit,
+  #back-button,
+  #next-button {
+    width: 80px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
+/* For smaller mobile screens */
+@media (max-width: 480px) {
+  .question {
+    font-size: 16px;
+    gap: 20px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  .input-container {
+    font-size: 14px;
+  }
+
+  #submit,
+  #back-button,
+  #next-button {
+    width: 70px;
+    height: 35px;
+    font-size: 14px;
+  }
 }
